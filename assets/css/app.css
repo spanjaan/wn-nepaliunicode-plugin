@@ -1,0 +1,45 @@
+/* Font face definitions (ensure unchanged) */
+@font-face {
+    font-family: 'Preeti';
+    src: url('/plugins/spanjaan/nepaliunicode/assets/fonts/preeti.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Hisab';
+    src: url('/plugins/spanjaan/nepaliunicode/assets/fonts/hisab.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Anek';
+    src: url('/plugins/spanjaan/nepaliunicode/assets/fonts/anek.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* Font classes */
+.font-preeti {
+    font-family: 'Preeti', sans-serif;
+}
+
+.font-hisab {
+    font-family: 'Hisab', sans-serif;
+}
+
+.font-unicode {
+    font-family: 'Anek', sans-serif;
+}
+
+#unicodeResult {
+    transition: color 0.35s ease;
+    will-change: color;
+}
+#unicodeResult.fading {
+    color: transparent !important;
+}

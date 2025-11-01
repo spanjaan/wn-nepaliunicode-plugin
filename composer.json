@@ -1,0 +1,44 @@
+{
+    "name": "spanjaan/wn-nepaliunicode-plugin",
+    "type": "winter-plugin",
+    "description": "Nepali Unicode conversion plugin for WinterCMS — converts Preeti and Hisab fonts to Nepali Unicode.",
+    "homepage": "https://github.com/spanjaan/wn-nepaliunicode-plugin",
+    "keywords": [
+        "nepali-unicode",
+        "preeti",
+        "hisab",
+        "unicode",
+        "converter",
+        "wintercms",
+        "winter-plugin"
+    ],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sudarshan Pudasaini",
+            "homepage": "https://meroprayas.com/",
+            "role": "Author"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/spanjaan/wn-nepaliunicode-plugin/issues",
+        "source": "https://github.com/spanjaan/wn-nepaliunicode-plugin"
+    },
+    "require": {
+        "php": ">=8.0",
+        "composer/installers": "^1.0 || ^2.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "SpAnjaan\\NepaliUnicode\\": "classes/"
+        },
+        "classmap": [
+            "Plugin.php"
+        ]
+    },
+    "extra": {
+        "installer-name": "nepaliunicode"
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}

@@ -1,0 +1,65 @@
+<div data-unicode-converter class="w-full p-8 rounded-lg bg-white bg-opacity-30 dark:bg-gray-900 dark:bg-opacity-30 shadow-lg">
+    <!-- Heading -->
+    <h1 class="text-3xl lg:text-4xl font-extrabold text-center tracking-tight flex items-center justify-center gap-2 bg-gradient-to-r from-purple-600 via-pink-500 to-yellow-400 bg-clip-text text-transparent">
+        <i class="bx bx-globe" aria-hidden="true"></i>
+        Nepali Unicode Converter
+    </h1>
+
+    <!-- Intro -->
+    <div class="my-5 max-w-md mx-auto text-center text-gray-700 dark:text-gray-300">
+        <p>Convert various Nepali fonts into Unicode instantly.</p>
+    </div>
+    <hr class="mb-5 border-2 border-purple-600 dark:border-purple-800">
+
+    <!-- Form -->
+    <form id="unicodeForm" data-unicode-handler="onConvert" autocomplete="off" class="px-6 pt-0 pb-6">
+        <div class="flex flex-col md:flex-row gap-6">
+            <!-- Input Area -->
+            <div class="md:w-1/2 relative">
+                <!-- Input Selector -->
+                <div class="mb-2 flex items-center gap-2">
+                    <label for="inputFont" class="font-semibold text-gray-700 dark:text-gray-300">Input Font:</label>
+                    <select id="inputFont" name="input_font" data-unicode-handler="onChangeInputFont" class="border rounded py-1 text-base bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 focus:ring-1 focus:ring-purple-500">
+                        <option value="preeti" {{ defaultInputFont == 'preeti' ? 'selected' : '' }}>Preeti</option>
+                        <option value="hisab" {{ defaultInputFont == 'hisab' ? 'selected' : '' }}>Hisab</option>
+                    </select>
+                </div>
+
+                <!-- Input Box -->
+                <label for="inputText" id="inputLabel" class="block text-center font-semibold mb-2 text-gray-50 dark:text-gray-300 dark:bg-teal-800 bg-teal-500 px-4 py-2 rounded-t-lg">
+                    {{ defaultInputFont == 'preeti' ? 'Preeti Text' : 'Hisab Text' }}
+                </label>
+                <div class="relative">
+                    <textarea id="inputText" name="input_text" class="text-base border-none rounded-b-lg w-full pr-20 py-3 focus:ring-1 focus:ring-purple-600 focus:outline-none bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 placeholder-gray-600 dark:placeholder-gray-400 shadow bg-opacity-50 dark:bg-opacity-50 {{ defaultInputFont == 'preeti' ? 'font-preeti' : 'font-hisab' }}" rows="8" placeholder="{{ defaultInputFont == 'preeti' ? 'k|Llt kmG6df 6fOk ug\'{xf]; .' : 'lx;fa kmG^df ^fOk ug\'{xf]; .' }}" aria-label="Input font text"></textarea>
+                    <button type="button" id="clearInput" data-unicode-handler="onClear" class="absolute top-2 right-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:text-red-600 dark:hover:text-red-400 rounded px-3 py-1 text-xs flex items-center gap-1 shadow" title="Clear Text" aria-label="Clear Text">
+                        <i class="bx bx-x-circle" aria-hidden="true"></i> Clear
+                    </button>
+                </div>
+            </div>
+
+            <!-- Output Area -->
+            <div class="md:w-1/2 relative">
+                <!-- Output Selector -->
+                <div class="mb-2 flex items-center gap-2">
+                    <label for="outputFont" class="font-semibold text-gray-700 dark:text-gray-300">Output Font:</label>
+                    <select id="outputFont" name="output_font" data-unicode-handler="onChangeOutputFont" class="border rounded py-1 text-base bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-200 border-gray-300 dark:border-gray-700 focus:ring-1 focus:ring-purple-500">
+                        <option value="preeti" {{ defaultOutputFont == 'preeti' ? 'selected' : '' }}>Preeti</option>
+                        <option value="hisab" {{ defaultOutputFont == 'hisab' ? 'selected' : '' }}>Hisab</option>
+                        <option value="unicode" {{ defaultOutputFont == 'unicode' ? 'selected' : '' }}>Unicode</option>
+                    </select>
+                </div>
+
+                <!-- Output Box -->
+                <label for="unicodeResult" class="block text-center font-semibold mb-2 text-gray-50 dark:text-gray-300 dark:bg-teal-800 bg-teal-500 px-4 py-2 rounded-t-lg">
+                    {{ defaultOutputFont == 'preeti' ? 'Preeti Output' : (defaultOutputFont == 'hisab' ? 'Hisab Output' : 'Unicode Output') }}
+                </label>
+                <div class="relative">
+                    <textarea id="unicodeResult" class="text-base border-none rounded-b-lg w-full pr-20 py-3 focus:ring-1 focus:ring-purple-600 focus:outline-none bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-400 placeholder-gray-600 dark:placeholder-gray-400 shadow bg-opacity-50 dark:bg-opacity-50 {{ defaultOutputFont == 'preeti' ? 'font-preeti' : (defaultOutputFont == 'hisab' ? 'font-hisab' : 'font-unicode') }}" rows="8" readonly placeholder="{{ defaultOutputFont == 'preeti' ? 'k|Llt cfp6k\'6 oxfF b]vLg]5 .' : (defaultOutputFont == 'hisab' ? 'lx;fa cfp^k\'^ oxfF b]lvg]% =' : 'युनिकोड आउटपुट यहाँ देखा पर्नेछ।') }}" aria-label="Output font text" aria-live="polite"></textarea>
+                    <button type="button" id="copyUnicode" data-unicode-handler="onCopy" class="absolute top-2 right-2 bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:text-green-600 dark:hover:text-green-400 rounded px-3 py-1 text-xs flex items-center gap-1 shadow" title="Copy Output" aria-label="Copy Output">
+                        <i class="bx bx-clipboard" aria-hidden="true"></i> Copy
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
